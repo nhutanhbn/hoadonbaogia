@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hóa đơn báo giá</title>
+	<link rel="stylesheet" href="./public/css/styles.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>	
+	<div class="doanh-nghiep newscate">
+
+		<div class="stick">
+		<!-- left menu mobile -->
+		<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+			<div class="mbmenu">
+				<div class="row head">
+					<div class="col-4">
+						<form>
+							<div class="form-group selectWrapper">
+								<select id="inputState" class="form-control selectBox" onchange="javascript:location.href = this.value;">
+									<option value="">--Chọn tỉnh--</option>
+									<option value="/an-giang">An Giang</option>
+									<option value="/vung-tau">Bà Rịa - Vũng Tàu</option>
+									<option value="/bac-can">Bắc Cạn</option>
+									<option value="/bac-giang">Bắc Giang</option>
+									<option value="/bac-lieu">Bạc Liêu</option>
+									<option value="/bac-ninh">Bắc Ninh</option>
+									<option value="/ben-tre">Bến Tre</option>
+									<option value="/binh-dinh">Bình Định</option>
+									<option value="/binh-duong">Bình Dương</option>
+									<option value="/binh-phuoc">Bình Phước</option>
+									<option value="/binh-thuan">Bình Thuận</option>
+									<option value="/ca-mau">Cà Mau</option>
+									<option value="/can-tho">Cần Thơ</option>
+									<option value="/cao-bang">Cao Bằng</option>
+									<option value="/da-nang">Đà Nẵng</option>
+									<option value="/dak-lak">Đắk Lắk</option>
+									<option value="/dak-nong">Đắk Nông</option>
+									<option value="/dien-bien">Điện Biên</option>
+									<option value="/dong-nai">Đồng Nai</option>
+									<option value="/dong-thap">Đồng Tháp</option>
+									<option value="/gia-lai">Gia Lai</option>
+									<option value="/ha-giang">Hà Giang</option>
+									<option value="/ha-nam">Hà Nam</option>
+									<option value="/ha-noi">Hà Nội </option>
+									<option value="/ha-tinh">Hà Tĩnh</option>
+									<option value="/hai-duong">Hải Dương</option>
+									<option value="/hai-phong">Hải Phòng</option>
+									<option value="/hau-giang">Hậu Giang</option>
+									<option value="/ho-chi-minh">Hồ Chí Minh</option>
+									<option value="/hoa-binh">Hòa Bình</option>
+									<option value="/hung-yen">Hưng Yên</option>
+									<option value="/khanh-hoa">Khánh Hòa</option>
+									<option value="/kien-giang">Kiên Giang</option>
+									<option value="/kon-tum">Kon Tum</option>
+									<option value="/lai-chau">Lai Châu</option>
+									<option value="/lam-dong">Lâm Đồng</option>
+									<option value="/lang-son">Lạng Sơn</option>
+									<option value="/lao-cai">Lào Cai</option>
+									<option value="/long-an">Long An</option>
+									<option value="/nam-dinh">Nam Định</option>
+									<option value="/nghe-an">Nghệ An</option>
+									<option value="/ninh-binh">Ninh Bình</option>
+									<option value="/ninh-thuan">Ninh Thuận</option>
+									<option value="/phu-tho">Phú Thọ</option>
+									<option value="/phu-yen">Phú Yên</option>
+									<option value="/quang-binh">Quảng Bình</option>
+									<option value="/quang-nam">Quảng Nam</option>
+									<option value="/quang-ngai">Quảng Ngãi</option>
+									<option value="/quang-ninh">Quảng Ninh</option>
+									<option value="/quang-tri">Quảng Trị</option>
+									<option value="/soc-trang">Sóc Trăng</option>
+									<option value="/son-la">Sơn La</option>
+									<option value="/tay-ninh">Tây Ninh</option>
+									<option value="/thai-binh">Thái Bình</option>
+									<option value="/thai-nguyen">Thái Nguyên</option>
+									<option value="/thanh-hoa">Thanh Hóa</option>
+									<option value="/hue">Thừa Thiên - Huế</option>
+									<option value="/tien-giang">Tiền Giang</option>
+									<option value="/tra-vinh">Trà Vinh</option>
+									<option value="/tuyen-quang">Tuyên Quang</option>
+									<option value="/vinh-long">Vĩnh Long</option>
+									<option value="/vinh-phuc">Vĩnh Phúc</option>
+									<option value="/yen-bai">Yên Bái</option>
+								</select>
+							</div>
+						</form>
+					</div>
+					<div class="col-4 menulink">
+						<a href="#">VỀ VNPT</a>
+					</div>
+					<div class="col-4 menulink">
+						<a href="#" target="_blank">MY VNPT</a>
+					</div>
+				</div>
+				<div class="row cndn">
+					<div class="col-6"><a href="#">CÁ NHÂN</a></div>
+					<div class="col-6"><a class="active" href="/doanh-nghiep">DOANH NGHIỆP</a></div>
+				</div>
+				<div class="row submobile">
+					<div class="col-6">
+						<a href="#"><img src="./public/images/mn-spdv.png"></a>
+						<p><a href="#">Sản phẩm-Dịch vụ</a></p>
+					</div>
+					<div class="col-6">
+						<a href="#"><img src="./public/images/mn-gpcntt.png"></a>
+						<p><a href="#">Giải pháp CNTT</a></p>
+					</div>
+					<div class="col-6">
+						<a href="#"><img src="./public/images/mn-nlvnpt.png"></a>
+						<p><a href="#">Năng lực VNPT</a></p>
+					</div>
+					<div class="col-6">
+						<a href="#"><img src="./public/images/mn-udkm.png"></a>
+						<p><a href="#">Tin tức</a></p>
+					</div>
+					<div class="col-6">
+						<a href="#"><img src="./public/images/mn-dgd.png"></a>
+						<p><a href="#">Điểm giao dịch</a></p>
+					</div>
+					<div class="col-6">
+						<a href="#"><img src="./public//images/mn-lienhe.png"></a>
+						<p><a href="#">Liên hệ</a></p>
+					</div>
+					<div class="col-6 hidden">
+						<a href="#"><img src="./public/images/mn6.png"></a>
+						<p><a href="#">Hỗ Trợ</a></p>
+					</div>
+					<div class="col-6 hidden">
+						<a href="#"><img src="./public/images/mn6.png"></a>
+						<p><a href="#">MY VNPT</a></p>
+					</div>
+				</div>
+				<div class="row searchmb">
+					<form action="/tim-kiem" enctype="multipart/form-data" method="get">                        <div class="form-group">
+						<input type="text" name="text" class="form-control" id="mobileText" aria-describedby="emailHelp" placeholder="Tìm kiếm">
+						<button type="submit" style="display:none;"></button>
+					</div>
+				</form>                    
+			</div>
+			<div class="row social justify-content-center">
+				<a href="#"><img src="./public/images/fb-icon-mb.png"></a>
+				<a href="#"><img src="./public/images/youtube-icon-mb.png"></a>
+
+			</div>
+		</div>
+		<!-- mobile menu -->
+		<div id="showLeftPush" class="ismobile" style="top:60px !important">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		</nav>
+
+		<!-- header mobile -->
+		<div class="menu-mobile ismobile">
+			<a href="#">
+				<img class="logo" src="./public/images/logo-mb.png">
+			</a>
+		</div>
+
+		<div class="boxHeight">
+			<!-- menu -->
+			<div class="menu ispc">
+				<div class="container clearfix">
+					<a href="#"><img class="logo" src="./public/images/logo-vnpt.jpg"></a>
+					<a class="link-top " href="#">CÁ NHÂN</a>
+					<a class="link-top active" href="#">DOANH NGHIỆP</a>
+					<a class="link-top" href="#">VỀ VNPT</a>
+					<form action="/tim-kiem" enctype="multipart/form-data" method="get">                        
+						<div class="form-group">
+							<input type="text" name="text" class="form-control" id="pcText" aria-describedby="emailHelp" placeholder="Tìm kiếm">
+							<button type="submit" style="display:none;"></button>
+						</div>
+					</form>                    
+
+					<form class="location">
+						<div class="form-group">
+							<select onchange="javascript:location.href = this.value;">
+								<option value="">--Chọn tỉnh--</option>
+								<option value="/an-giang">An Giang</option>
+								<option value="/vung-tau">Bà Rịa - Vũng Tàu</option>
+								<option value="/bac-can">Bắc Cạn</option>
+								<option value="/bac-giang">Bắc Giang</option>
+								<option value="/bac-lieu">Bạc Liêu</option>
+								<option value="/bac-ninh">Bắc Ninh</option>
+								<option value="/ben-tre">Bến Tre</option>
+								<option value="/binh-dinh">Bình Định</option>
+								<option value="/binh-duong">Bình Dương</option>
+								<option value="/binh-phuoc">Bình Phước</option>
+								<option value="/binh-thuan">Bình Thuận</option>
+								<option value="/ca-mau">Cà Mau</option>
+								<option value="/can-tho">Cần Thơ</option>
+								<option value="/cao-bang">Cao Bằng</option>
+								<option value="/da-nang">Đà Nẵng</option>
+								<option value="/dak-lak">Đắk Lắk</option>
+								<option value="/dak-nong">Đắk Nông</option>
+								<option value="/dien-bien">Điện Biên</option>
+								<option value="/dong-nai">Đồng Nai</option>
+								<option value="/dong-thap">Đồng Tháp</option>
+								<option value="/gia-lai">Gia Lai</option>
+								<option value="/ha-giang">Hà Giang</option>
+								<option value="/ha-nam">Hà Nam</option>
+								<option value="/ha-noi">Hà Nội </option>
+								<option value="/ha-tinh">Hà Tĩnh</option>
+								<option value="/hai-duong">Hải Dương</option>
+								<option value="/hai-phong">Hải Phòng</option>
+								<option value="/hau-giang">Hậu Giang</option>
+								<option value="/ho-chi-minh">Hồ Chí Minh</option>
+								<option value="/hoa-binh">Hòa Bình</option>
+								<option value="/hung-yen">Hưng Yên</option>
+								<option value="/khanh-hoa">Khánh Hòa</option>
+								<option value="/kien-giang">Kiên Giang</option>
+								<option value="/kon-tum">Kon Tum</option>
+								<option value="/lai-chau">Lai Châu</option>
+								<option value="/lam-dong">Lâm Đồng</option>
+								<option value="/lang-son">Lạng Sơn</option>
+								<option value="/lao-cai">Lào Cai</option>
+								<option value="/long-an">Long An</option>
+								<option value="/nam-dinh">Nam Định</option>
+								<option value="/nghe-an">Nghệ An</option>
+								<option value="/ninh-binh">Ninh Bình</option>
+								<option value="/ninh-thuan">Ninh Thuận</option>
+								<option value="/phu-tho">Phú Thọ</option>
+								<option value="/phu-yen">Phú Yên</option>
+								<option value="/quang-binh">Quảng Bình</option>
+								<option value="/quang-nam">Quảng Nam</option>
+								<option value="/quang-ngai">Quảng Ngãi</option>
+								<option value="/quang-ninh">Quảng Ninh</option>
+								<option value="/quang-tri">Quảng Trị</option>
+								<option value="/soc-trang">Sóc Trăng</option>
+								<option value="/son-la">Sơn La</option>
+								<option value="/tay-ninh">Tây Ninh</option>
+								<option value="/thai-binh">Thái Bình</option>
+								<option value="/thai-nguyen">Thái Nguyên</option>
+								<option value="/thanh-hoa">Thanh Hóa</option>
+								<option value="/hue">Thừa Thiên - Huế</option>
+								<option value="/tien-giang">Tiền Giang</option>
+								<option value="/tra-vinh">Trà Vinh</option>
+								<option value="/tuyen-quang">Tuyên Quang</option>
+								<option value="/vinh-long">Vĩnh Long</option>
+								<option value="/vinh-phuc">Vĩnh Phúc</option>
+								<option value="/yen-bai">Yên Bái</option>
+							</select>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- submenu    -->
+			<div class="submenu ispc mndoanhnghiep">
+				<div class="container">
+					<ul class="clearfix menuPc">
+						<li class="has-dropdown" id="menuEnterProduct" style="width:140px">
+							<a href="#">
+								<img src="./public/images/mn-spdv.png">
+								<p>SẢN PHẨM-DỊCH VỤ</p>
+							</a>
+							<ul class="iteamMenu nav-dropdown">
+								<li><a href="#">Di động doanh nghiệp</a></li>
+								<li><a href="#">Cố định</a></li>
+								<li><a href="#">Internet băng rộng</a></li>
+								<li><a href="#">Truyền dẫn</a></li>
+								<li><a href="#">Hạ tầng trung tâm dữ liệu</a></li>
+								<li><a href="#">Truyền hình - Giám sát</a></li>
+								<li><a href="#">Bảo mật</a></li>
+								<li><a href="#">Dịch vụ CNTT</a></li>
+								<li><a href="#" target="_blank">DV Truyền thông Quảng cáo</a></li>
+							</ul>
+						</li>
+						<li class="has-dropdown" id="menuEnterSolution">
+							<a href="#">
+								<img src="./public/images/mn-gpcntt.png">
+								<p>GIẢI PHÁP CNTT</p>
+							</a>
+							<ul class="iteamMenu nav-dropdown">
+								<li><a href="#">Chính phủ điện tử</a></li>
+								<li><a href="#">Y tế điện tử</a></li>
+								<li><a href="#">Giáo dục điện tử</a></li>
+								<li><a href="#">Tổng công ty - Tập đoàn</a></li>
+							</ul>
+						</li>
+						<li class="" id="menuEnterSME">
+							<a href="#" target="_blank">
+								<img src="./public/images/mn-icon6.png">
+								<p>SME Portal</p>
+							</a>
+						</li>
+						<li class="has-dropdown" id="menuEnterCapacity">
+							<a href="#">
+								<img src="./public/images/nangluc.png">
+								<p>NĂNG LỰC VNPT</p>
+							</a>
+							<ul class="iteamMenu nav-dropdown">
+								<li><a href="#">Hạ tầng viễn thông</a></li>
+								<li><a href="#">Năng lực ICT &amp; CNTT</a></li>
+								<li><a href="#">Đối tác</a></li>
+								<li><a href="#">Các giải thưởng</a></li>
+							</ul>
+						</li>
+						<li class="" id="menuEnterPromotion">
+							<a href="#">
+								<img src="./public/images/tintuc.png">
+								<p>TIN TỨC</p>
+							</a>
+						</li>
+						<li class="" id="menuIntroShop">
+							<a href="#">
+								<img src="./public/images/mn-dgd.png">
+								<p>ĐIỂM GIAO DỊCH</p>
+							</a>
+						</li>
+						<li class="" id="menuEnterContact">
+							<a href="#">
+								<img src="./public/images/mn-lienhe.png">
+								<p>LIÊN HỆ</p>
+							</a>
+						</li>
+						<a href="#" id="menuEnterSupport" class="hidden">
+							<li>
+								<img src="./public/images/mn-icon6.png">
+								<p>HỖ TRỢ</p>
+							</li>
+						</a>
+						<a href="#" target="_blank" class="hidden">
+							<li>
+								<img src="./public/images/mn-icon7.png">
+								<p>MY VNPT</p>
+							</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+		</div>
+		</div>
+		<!-- <div id="fb-root" class=" fb_reset">
+			<div style="position: absolute; top: -10000px; width: 0px; height: 0px;">
+				<div>
+				</div>
+			</div>
+		</div> -->
+
+	<!-- <script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&amp;version=v3.3"></script> -->
+
+	<div class="detailpack detailnews">
+		<div class="container-fuild bread">
+			<nav aria-label="breadcrumb" class="container">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="#">VNPT</a></li>
+					<li class="breadcrumb-item"><a href="#">Doanh nghiệp</a></li>
+					<li class="breadcrumb-item"><a href="#">Tư vấn</a></li>
+
+				</ol>
+			</nav>
+		</div>
+		<!-- banner -->
+		<div class="banner-news container-fuild ">
+			<div class="container">
+				<div class="col-12 col-lg-8">
+					<h1>
+						Bảng giá hóa đơn điện tử VNPT giá rẻ
+					</h1>
+				</div>
+
+			</div>
+
+		</div>
+		<!-- content -->
+		<div class="container">
+			<div class="row ctdetail">
+				<div class="col-12 col-md-12 col-lg-8 left">
+					<div class="row">
+						<div class="col-12 col-md-5 time">
+							<p class="">
+								<i class="far fa-clock"></i>
+								<span>10:41</span>
+								|<span>04/09/2019</span>
+							</p>
+							<a href="#"><img class="newsprint" src="./public/images/icon-printf.png"></a>
+						</div>
+						<div class="col-12 col-md-7 social d-flex justify-content-center justify-content-md-end">
+
+
+						</div>
+					</div>
+					<div class="description">
+						<p>Bảng giá hóa đơn điện tử VNPT giá rẻ</p>
+					</div>
+					<div class="content">
+						<img src="./public/images/hoa-don-dien-tu-vinaphone.jpg"><br>
+						<p><em><strong>Hóa đơn điện tử giá rẻ </strong></em>ra đời và trở thành một trong những công cụ đắc lực giúp các công ty, doanh nghiệp tiết kiệm thời gian khi quản lý cũng như dễ dàng lưu giữ thông tin. Nếu doanh nghiệp đang có nhu cầu sử dụng <a href="#">hóa đơn điện tử giá rẻ</a> thì hãy tìm hiểu về bảng giá hóa đơn điện tử VNPT thông qua bài viết dưới đây.</p>
+						<h2><strong>1. Bảng giá hóa đơn điện tử VNPT.</strong></h2>
+						<p>Với mục đích giúp các doanh nghiệp ở nhiều lĩnh vực khác nhau có thể sử dụng hóa đơn điện tử, hiện nay VNPT cung cấp nhiều loại hóa đơn điện tử giá rẻ đa dạng, với bảng giá cụ thể ứng với 8 gói cước như sau.</p>
+						<p style="text-align: center;"><img src="./public/images/bang-gia-hoa-don-dien-tu-vnpt.jpg" alt="Bảng giá hóa đơn điện tử giá rẻ VNPT" style="max-width: 100%;"></p>
+						<p style="text-align: center;"><em>Bảng giá hóa đơn điện tử mới nhất của VNPT.</em></p>
+						<p><br>Trước khi đăng ký sử dụng các gói cước thuộc hóa đơn điện tử giá rẻ do VNPT cung cấp, quý khách cần lưu ý:</p>
+						<p><em><strong>Gói HD200:</strong></em> Chỉ dùng cho năm tài chính đăng ký, nếu trong năm đó, không sử dụng hết số lượng hóa đơn đã đăng ký thì cần hủy hóa đơn cũ và đăng ký số lượng hóa đơn mới cho năm tiếp theo.Với số lượng hóa đơn khác nhau thì đơn giá dành cho các gói cước sẽ là khác nhau. Số lượng hóa đơn nhỏ nhất là 200 hóa đơn với đơn giá 1.000 đồng, và với số lượng hóa đơn từ trên 1.000.000 cái, thì đơn giá là 8 đồng.</p>
+						<p><em><strong>Bắt đầu từ gói HD300:</strong></em> Số hóa đơn đã đăng ký được sử dụng tối đa( nghĩa là không áp dụng theo năm tài chính), nếu trong năm đó khách hàng không sử dụng hết số hóa đơn đăng ký thì số hóa đơn còn dư vẫn có thể sử dụng vào năm kế tiếp.</p>
+						<h2><strong>2. Bảng giá thuê/mua thiết bị ký số hóa đơn điện tử.</strong></h2>
+						<p style="text-align: center;"><img src="./public/images/hoa-don-dien-tu-vinaphone3541A.jpg" alt="Thuê hóa đơn điện tử giá rẻ" style="max-width: 100%;"></p>
+						<p style="text-align: center;"><em>Xu hướng hóa đơn điện tử cho doanh nghiệp.</em></p>
+						<p>Để tạo thuận lợi nhất cho những công ty, doanh nghiệp có nhu cầu sử dụng dịch vụ hóa đơn điện tử giá rẻ, hiện nay VNPT có hai giải pháp để hỗ trợ các dạng thiết bị hóa đơn điện tử kèm bảng giá chi tiết đó là:</p>
+						<ul>
+							<li>Với doanh nghiệp có số lượng hóa đơn từ 10.000/MST/năm trở lên thì nên sử dụng thiết bị ký số HSM. Thiết bị ký tốc độ cao, ký số tập trung và nhiều bộ phận dùng được cùng lúc. Phân quyền sử dụng dễ dàng hơn đồng thời đảm bảo số hóa đơn liền dãy và liên tục theo thời gian.</li>
+						</ul>
+						<table border="1">
+							<tbody>
+								<tr>
+									<td>Gói chứng thư số</td>
+									<td>Phí thuê bao 12 tháng</td>
+									<td>Phí thuê bao 24 tháng</td>
+									<td>Phí thuê bao 36 tháng</td>
+								</tr>
+								<tr>
+									<td>Giá dịch vụ (độ dài khóa 1024 bit)</td>
+									<td>5.000.000</td>
+									<td>9.000.000</td>
+									<td>12.000.000</td>
+								</tr>
+								<tr>
+									<td>Thiết bị ký số HSM</td>
+									<td colspan="3">Sử dụng chung thiết bị HSM của VNPT</td>
+								</tr>
+								<tr>
+									<td>Tổng cước trọn gói</td>
+									<td>5.000.000</td>
+									<td>9.000.000</td>
+									<td>12.000.000</td>
+								</tr>
+							</tbody>
+						</table>
+						<ul>
+							<li>Với doanh nghiệp có số lượng hóa đơn dưới 10.000/MST/năm thì nên sử dụng thiết bị ký số USB - Token. Thiết bị ký số lần lượt, kiểm soát chặt chẽ việc phân quyền cho bộ phận khác sử dụng. Tại một thời điểm chỉ có 1 người được sử dụng thiết bị này.</li>
+						</ul>
+						<table border="1">
+							<tbody>
+								<tr>
+									<td>Thiết bị ký số</td>
+									<td colspan="4">Bảng giá</td>
+								</tr>
+								<tr>
+									<td rowspan="4">Thiết bị ký số USB – Token của VNPT hoặc các nhà có cung cấp chữ ký số khác</td>
+									<td>Thời gian gói cước</td>
+									<td>Giá gốc (VNĐ)</td>
+									<td>Giá thanh toán (VNĐ)</td>
+									<td>Giá USB-Token</td>
+								</tr>
+								<tr>
+									<td>Gói 18 tháng</td>
+									<td>1,233,000</td>
+									<td>801,450</td>
+									<td>500,000</td>
+								</tr>
+								<tr>
+									<td>Gói 33 tháng</td>
+									<td>2,111,000</td>
+									<td>1,372,150</td>
+									<td>500,000</td>
+								</tr>
+								<tr>
+									<td>Gói 48 tháng</td>
+									<td>2,993,000</td>
+									<td>1,945,450</td>
+									<td>Miễn phí</td>
+								</tr>
+							</tbody>
+						</table>
+						<h2><strong>3.&nbsp; Phí khởi tạo, cài đặt - tích hợp hệ thống hóa đơn điện tử.</strong></h2>
+						<p style="text-align: center;"><img src="./public/images/lo-trinh-bat-buoc-su-dung-hoa-don-dien-tu3651A.jpg" alt="Khởi tạo hóa đơn điện tử giá rẻ" style="max-width: 100%;"></p>
+						<p style="text-align: center;"></p>
+						<p>Khi tích hợp với hệ thống đơn giản, phí tích hợp sẽ là:</p>
+						<table border="1">
+							<tbody>
+								<tr>
+									<td>Loại hình DN, CT</td>
+									<td>Phương thức tạo lập hóa đơn đang dùng</td>
+									<td>Phương thức tích hợp cài đặt</td>
+									<td>Chi phí</td>
+								</tr>
+								<tr>
+									<td>Dùng hóa đơn viết tay</td>
+									<td>Mua quyển hóa đơn của Cơ quan Thuế</td>
+									<td>Nhập dữ liệu trực tiếp trên hệ thống phát hành hóa đơn</td>
+									<td>1.000.000</td>
+								</tr>
+								<tr>
+									<td>Dùng phần mềm đặt in hóa đơn</td>
+									<td>Đặt in hóa đơn từ đơn vị cung cấp dịch vụ in hóa đơn</td>
+									<td>Công cụ kết xuất dữ liệu hóa đơn</td>
+									<td>2.000.000</td>
+								</tr>
+								<tr>
+									<td>Dùng phần mềm kế toán</td>
+									<td>Effect, Bravo, Fast,…</td>
+									<td>Kết nối theo chuẩn tích hợp CQT yêu cầu</td>
+									<td>5.000.000</td>
+								</tr>
+								<tr>
+									<td>Dùng hệ thống nghiệp vụ phức tạp</td>
+									<td>Hệ thống nghiệp vụ đặc thù, chuyên dụng của riêng doanh nghiệp</td>
+									<td>Thực hiện khảo sát, lên phương án tích hợp phù hợp với từng hệ thống</td>
+									<td>Theo khối lượng và công việc thực tế triển khai (*)</td>
+								</tr>
+							</tbody>
+						</table>
+						<p>Phí tích hợp được tính bằng: Phí tích hợp = Ngày công * Số nhân công * Đơn giá/ngày công/nhân công Trong đó:</p>
+						<ul>
+							<li>Ngày công: tối đa 8h/ngày</li>
+							<li>Đơn giá nhân công = 250.000 VND</li>
+						</ul>
+						<p>Dịch vụ tích hợp, cài đặt là dịch vụ không chịu thuế. Phí cài đặt, tích hợp được tính độc lập với phí dịch vụ HĐĐT khi có yêu cầu của doanh nghiệp.</p>
+						<h2><strong>4. Bảng giá thiết kế mẫu hóa đơn điện tử.</strong></h2>
+						<p style="text-align: center;"><img src="./public/images/chu-ky-hoa-don-dien-tu.jpg" alt="Thiết kế mẫu háo đơn điện tưr giá rẻ" style="max-width: 100%;"></p>
+						<p style="text-align: center;"><em>Thiết kế mẫu hóa đơn điện tử.</em></p>
+						<p>Để đa dạng về mặt mẫu mã cũng như mang tới cho khách hàng nhiều sự lựa chọn hơn, hiện tại VNPT đã thiết kế và đưa lên hệ thống hóa đơn điện tử giá rẻ 10 mẫu hóa đơn cơ bản. Các hóa đơn đều đảm bảo tiêu chuẩn theo mẫu của cơ quan quản lý thuế và ngoài ra còn có các mẫu truyền thống, phổ biến đang được nhiều tổ chức, doanh nghiệp sử dụng. Bảng giá thiết kế hóa mẫu hóa đơn điện tử hiện nay như sau:</p>
+						<ul>
+							<li>Miễn phí nếu khách hàng lựa chọn mẫu mặc định, không chỉnh sửa gì (khách hàng có thể đổi logo và hình nền theo công ty).</li>
+							<li>Chi phí 500.000VNĐ/ mẫu nếu khách hàng sử dụng mẫu hóa đơn mặc định và thay đổi vị trí hiển thị các dữ liệu đã có (không thêm dữ liệu mới).</li>
+							<li>Chi phí 1.000.000 VNĐ/ mẫu khi khách hàng xây dựng mẫu hóa đơn mới, đặc thù hay bổ sung thêm dữ liệu, chỉnh sửa lại hình nền….</li>
+						</ul>
+						<h2><strong>5. Cách nhận báo giá hóa đơn điện tử VNPT rẻ nhất.</strong></h2>
+						<p>Để có thể biết thêm thông tin cũng như nhận báo giá hóa đơn điện tử giá rẻ một cách nhanh nhất, khách hàng hãy liên hệ với bộ phận chăm sóc khách hàng VNPT để nhận khuyến mãi, giảm giá thông qua số điện thoại 18001260.</p>
+						<p>Các thông tin đưa ra trong bài viết đã phần nào giúp khách hàng hiểu hơn về dịch vụ <em><strong>hóa đơn điện tử giá rẻ</strong> </em>của VNPT. Mọi thắc mắc xin liên hệ tổng đài 18001260 để được giải đáp và hỗ trợ.</p>
+					</div>
+					<input type="hidden" id="objectID" value="680">
+					<div class="author">
+						<p>Nguồn: vnpt.com.vn</p>
+					</div>
+
+					<div class="clearfix-10"></div>
+
+					<div class="keyword">
+						<p>
+							Từ khóa:
+							<span>khuyến mại vinaphone</span>
+							<span>Khuyến mại 20%</span>
+							<span>Thuê bao trả trước</span>
+							<span>Thuê bao trả sau</span>
+							<span>Khuyến mại</span>
+						</p>
+					</div>
+
+
+				</div>
+				<div class="left-item col-12 col-md-12 col-lg-4 news">
+
+					<div class="morenews right">
+						<p class="titlelq">Tin liên quan</p>
+						<div class="item">
+							<div class="row">
+								<div class="col-4 col-lg-5 img">
+									<a class="h_68750" href="#"><img src="./public/images/vnpt-pharmacy.jpg" style="height: 96px;"></a>
+								</div>
+								<div class="col-8 col-lg-7 text">
+									<a href="#">
+										<p class="title">Quản lý nhà thuốc bệnh viện tốt nhất với phần mềm VNPT Pharmacy</p>
+									</a>
+									<p class="timeNews">
+										Thứ Ba 19/11/2019 10:40
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="row">
+								<div class="col-4 col-lg-5 img">
+									<a class="h_68750" href="#"><img src="./public/images/vcc-vnpt.jpg" style="height: 96px;"></a>
+								</div>
+								<div class="col-8 col-lg-7 text">
+									<a href="#">
+										<p class="title">VNPT Cloud Contact Center là dịch vụ gì của VNPT?</p>
+									</a>
+									<p class="timeNews">
+										Thứ Ba 19/11/2019 10:26
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="row">
+								<div class="col-4 col-lg-5 img">
+									<a class="h_68750" href="#"><img src="./public/images/dung-vnpt-check.jpg" style="height: 96px;"></a>
+								</div>
+								<div class="col-8 col-lg-7 text">
+									<a href="#">
+										<p class="title">Tem QR code VNPT là gì? Có tác dụng gì?</p>
+									</a>
+									<p class="timeNews">
+										Thứ Ba 19/11/2019 10:10
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="row">
+								<div class="col-4 col-lg-5 img">
+									<a class="h_68750" href="#"><img src="./public/images/ma-xac-thuc.jpg" style="height: 96px;"></a>
+								</div>
+								<div class="col-8 col-lg-7 text">
+									<a href="#">
+										<p class="title">Hóa đơn điện tử không có mã xác thực?</p>
+									</a>
+									<p class="timeNews">
+										Thứ Ba 19/11/2019 09:57
+									</p>
+								</div>
+							</div>
+						</div>
+						<!-- <div class="item">
+							<div class="row">
+								<div class="col-4 col-lg-5 img">
+									<a class="h_68750" href="#"><img src="./public/images/phan-mem-vnpt-check.jpg" style="height: 96px;"></a>
+								</div>
+								<div class="col-8 col-lg-7 text">
+									<a href="#">
+										<p class="title">[Hướng dẫn] DÙNG THỬ VNPT Check chỉ bằng 4 BƯỚC đơn giản</p>
+									</a>
+									<p class="timeNews">
+										Thứ Sáu 08/11/2019 15:39
+									</p>
+								</div>
+							</div>
+						</div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="banner-body">
+		<a href="#">
+			<img class="bnpc w100percent" src="./public/images/banner-body.jpg">
+		</a>
+	</div>
+
+	
+	<!-- subfooter -->
+	<div class="sub-footer ">
+		<div class="container ">
+			<div class="row ">
+				<div class="col-lg-3 col-12 fsearch justify-content-center  ispc">
+					<div class="row justify-content-center ">
+						<div class="col-md-12 col-10 ">
+							<p>vnpt.com.vn</p>
+							<form action="/tim-kiem" enctype="multipart/form-data" method="get">                                    <div class="form-group">
+								<input type="text" name="text" class="form-control input-border" aria-describedby="emailHelp" placeholder="Tìm kiếm...">
+								<button type="submit" style="display:none;"></button>
+							</div>
+						</form>                                
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-9 col-12 justify-content-sm-center ">
+				<ul>
+					<li>
+						<div class="card ">
+							<img class="card-img-top mx-auto d-block " src="./public/images/footer_icon2.jpg " alt="Card image cap ">
+							<div class="card-body ">
+								<p class="card-text text-center "><a href="#">Hotline: 18001260</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="card ">
+							<img class="card-img-top mx-auto d-block " src="./public/images/footer_icon3.jpg " alt="Card image cap ">
+							<div class="card-body ">
+								<p class="card-text text-center "><a href="#">cskh@vnpt.vn</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="card ">
+							<img class="card-img-top mx-auto d-block " src="./public/images/footer_icon4.jpg " alt="Card image cap ">
+							<div class="card-body ">
+								<p class="card-text text-center "><a href="#">Điều khoản</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="card ">
+							<img class="card-img-top mx-auto d-block " src="./public/images/footer_icon5.jpg " alt="Card image cap ">
+							<div class="card-body ">
+								<p class="card-text text-center "><a href="#">Q&amp;A</a></p>
+							</div>
+						</div>
+					</li>
+					<li class="ispc">
+						<div style="margin-top:7px">
+							<a href="#"><img src="./public/images/certify_vnpt.png" alt="logo"></a>
+							<div class="card-body ">
+								<p class="card-text text-center" style="font-size:13px;font-weight:600">ĐƯỢC CHỨNG NHẬN</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- foooter -->
+<div class="footer ">
+	<button class="scroll-top scroll-to-target" data-target="html">
+		<span class="fa fa-angle-up"></span>
+	</button>
+	<div class="container ">
+		<div class="row ">
+			<div class="col-md-6 col-lg-4 logo ">
+				<img src="./public/images/logo_footer.png ">
+			</div>
+			<div class="col-md-6 col-lg-4 follow justify-content-md-center justify-content-sm-left ">
+				<p>
+					Theo dõi chúng tôi:
+					<a href="#"><img src="./public/images/fb-icon.png"></a>
+					<a href="#"><img src="./public/images/youtube-icon.jpg"></a>
+
+				</p>
+			</div>
+			<div class="col-md-12 col-lg-4 copyright ">
+				<p>VNPT VinaPhone © 2019.</p>
+				<p>Giấy phép số: 62/GP-TTĐT do Bộ Thông tin - Truyền thông cấp ngày 09/04/2019.</p>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
